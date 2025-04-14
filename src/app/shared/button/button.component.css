@@ -1,0 +1,25 @@
+button{
+  margin: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: black;
+}
+
+.submit{
+  background-color: green;
+}
+
+.reset{
+  background-color: red;
+}
+
+.goBack{
+  background-color: blue;
+}
+
+.submit:disabled,
+.reset:disabled,
+.goBack:disabled{
+  background-color: gray;
+}
