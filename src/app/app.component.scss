@@ -1,0 +1,13 @@
+@use './../styles/breakpoints' as *;
+
+.container {
+  padding: 16px;
+
+  @include for-tablet {
+    padding: 32px;
+  }
+
+  @include for-desktop {
+    padding: 64px;
+  }
+}

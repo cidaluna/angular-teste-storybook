@@ -8,7 +8,7 @@ type Size = 'small' | 'medium' | 'large';
   standalone: true,
   imports: [],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
   @Input() text = '';

@@ -1,0 +1,21 @@
+$breakpoint-small: 599px;
+$breakpoint-tablet: 600px;
+$breakpoint-desktop: 1024px;
+
+@mixin for-small {
+  @media (max-width: #{$breakpoint-small}) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{($breakpoint-desktop - 1)}) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}

@@ -47,3 +47,11 @@ export const Small: Story = {
     label: 'Button',
   },
 };
+
+export const Teste: Story = {
+  args: {
+    size: "large",
+    label: "Button",
+    backgroundColor: "#1638e8"
+  }
+};
