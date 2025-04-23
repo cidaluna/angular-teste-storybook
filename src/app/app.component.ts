@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-teste-storybook';
-  screenType: 'small' | 'tablet' | 'desktop' = 'desktop';
+  screenType!: string;
 
   ngOnInit() {
     this.setScreenType(window.innerWidth);
@@ -23,12 +23,18 @@ export class AppComponent {
   }
 
   private setScreenType(width: number): void {
-    if (width <= 599) {
-      this.screenType = 'small';
-    } else if (width >= 600 && width < 1024) {
-      this.screenType = 'tablet';
+    if (width < 767) {
+      this.screenType = 'xs (< 767px)';
+    } else if (width >= 768 && width < 1024) {
+      this.screenType = 'sm (< 1024px)';
+    } else if (width >= 1024 && width < 1440) {
+      this.screenType = 'md (< 1440px)';
+    } else if (width >= 1440 && width < 1600) {
+      this.screenType = 'lg (< 1600px)';
+     } else if (width >= 1601 && width < 1920) {
+      this.screenType = 'xl (< 1920px)';
     } else {
-      this.screenType = 'desktop';
+      this.screenType = 'ultra (>= 1920px)';
     }
   }
 }

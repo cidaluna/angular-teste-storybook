@@ -5,13 +5,31 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: variables.$color-yellow-small;
+  background-color: lightgray; // padrão
 
-  @include breakpoints.for-tablet {
-    background-color: variables.$color-blue-tablet;
+
+  @include breakpoints.respond-to(xs) {
+    background-color: green;
   }
 
-  @include breakpoints.for-desktop {
-    background-color: variables.$color-green-desktop;
+  @include breakpoints.respond-to(sm) {
+    background-color: purple;
   }
+
+  @include breakpoints.respond-to(md) {
+    background-color: blue;
+  }
+
+  @include breakpoints.respond-to(lg) {
+    background-color: yellowgreen;
+  }
+
+  @include breakpoints.respond-to(xl) {
+    background-color: lightsalmon;
+  }
+
+  @include breakpoints.respond-to(ultra) {
+    background-color: blueviolet;
+  }
+
 }
