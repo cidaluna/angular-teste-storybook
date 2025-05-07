@@ -1,0 +1,28 @@
+$container-dimensions: (
+  xz: (width: 300px, height: 280px),
+  xxs: (width: 320px, height: 300px),
+  xs: (width: 340px, height: 320px),
+  sm: (width: 380px, height: 350px),
+  md: (width: 400px, height: 400px),
+  ml: (width: 420px, height: 450px),
+  lg: (width: 440px, height: 500px),
+  xl: (width: 480px, height: 550px),
+  xxl: (width: 500px, height: 600px),
+  ultra: (width: 520px, height: 650px)
+);
+
+@mixin center-container($value) {
+  $settings: map-get($container-dimensions, $value);
+
+  @if $settings != null {
+    $width: map-get($settings, width);
+    $height: map-get($settings, height);
+
+    margin: 0 auto;
+    background-color: gray;
+    width: $width;
+    height: $height;
+  } @else {
+    @warn "Breakpoint `#{$value}` não encontrado em \$container-dimensions.";
+  }
+}

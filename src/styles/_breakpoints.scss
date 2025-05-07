@@ -1,35 +1,18 @@
-// $breakpoint-small: 599px;
-// $breakpoint-tablet: 600px;
-// $breakpoint-desktop: 1024px;
-
-// @mixin for-small {
-//   @media (max-width: #{$breakpoint-small}) {
-//     @content;
-//   }
-// }
-
-// @mixin for-tablet {
-//   @media (min-width: #{$breakpoint-tablet}) and (max-width: #{($breakpoint-desktop - 1)}) {
-//     @content;
-//   }
-// }
-
-// @mixin for-desktop {
-//   @media (min-width: #{$breakpoint-desktop}) {
-//     @content;
-//   }
-// }
-
 // Mapa com os breakpoints
 $breakpoints: (
+  xz: 0px,
+  xxs: 320px,
   xs: 480px,
   sm: 768px,
   md: 1024px,
-  lg: 1440px,
-  xl: 1600px,
+  ml: 1280px,
+  lg: 1366px,
+  xl: 1440px,
+  xxl: 1600px,
   ultra: 1920px
 );
 
+// Mixin para aplicar nas medias queries
 @mixin respond-to($breakpoint) {
   $value: map-get($breakpoints, $breakpoint);
 

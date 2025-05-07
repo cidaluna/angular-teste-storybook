@@ -1,25 +1,23 @@
-@use './../styles/breakpoints';
+@use "./../styles/breakpoints" as *;
+@use "./../styles/mixin" as *;
+
 
 .container {
   padding: 16px;
+  background-color: lightgreen;
+  border-radius: 16px;
 
-  // @include for-tablet {
-  //   padding: 32px;
-  // }
+  @include center-container(xxl); // valor default
 
-  // @include for-desktop {
-  //   padding: 64px;
-  // }
-
-  @include breakpoints.respond-to (sm) {
-    padding: 32px;
+  @include respond-to(sm) { // exemplo se precisar de um breakpoint específico
+    @include center-container(sm);
+    padding: 12px;
+    font-size: 14px;
   }
 
-  @include breakpoints.respond-to (md) {
-    padding: 64px;
-  }
-
-  @include breakpoints.respond-to (lg) {
-    padding: 90px;
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-to($breakpoint) {
+      @include center-container($breakpoint);
+    }
   }
 }
