@@ -5,32 +5,34 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: lightgray; // padrão
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  //background-color: lightgray; // padrão
 
 
   @include breakpoints.respond-to(xs) {
-    background-color: green;
+    background-color: #008000;
   }
 
   @include breakpoints.respond-to(sm) {
-    background-color: purple;
+    background-color: #78ff78;
   }
 
   @include breakpoints.respond-to(md) {
-    background-color: blue;
+    background-color: #0000ff;
   }
 
   @include breakpoints.respond-to(lg) {
-    background-color: yellowgreen;
+    background-color: #799dff;
   }
 
   @include breakpoints.respond-to(xl) {
-    background-color: lightsalmon;
+    background-color: #f28500;
   }
 
   @include breakpoints.respond-to(ultra) {
-    background-color: blueviolet;
+    background-color: #ffc37a;
   }
 
 }

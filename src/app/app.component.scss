@@ -3,11 +3,12 @@
 
 
 .container {
-  padding: 16px;
-  background-color: lightgreen;
+  padding: 20px;
+  background-color: white;
   border-radius: 16px;
+  margin: 22px auto 0 auto;
 
-  @include center-container(xxl); // valor default
+  @include center-container(md); // valor default
 
   @include respond-to(sm) { // exemplo se precisar de um breakpoint específico
     @include center-container(sm);
@@ -19,5 +20,13 @@
     @include respond-to($breakpoint) {
       @include center-container($breakpoint);
     }
+  }
+
+  &__title {
+    @include heading-style;
+  }
+
+  &__p {
+    @include paragraph-style;
   }
 }

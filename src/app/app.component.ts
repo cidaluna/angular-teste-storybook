@@ -23,18 +23,20 @@ export class AppComponent {
   }
 
   private setScreenType(width: number): void {
-    if (width < 767) {
-      this.screenType = 'xs (< 767px)';
-    } else if (width >= 768 && width < 1024) {
-      this.screenType = 'sm (< 1024px)';
-    } else if (width >= 1024 && width < 1440) {
-      this.screenType = 'md (< 1440px)';
-    } else if (width >= 1440 && width < 1600) {
-      this.screenType = 'lg (< 1600px)';
-     } else if (width >= 1601 && width < 1920) {
-      this.screenType = 'xl (< 1920px)';
+    if (width < 480) {
+      this.screenType = 'small < 480px';
+    } else if (width < 768) {
+      this.screenType = 'xs < 768px';
+    } else if (width < 1024) {
+      this.screenType = 'sm < 1024px';
+    } else if (width < 1440) {
+      this.screenType = 'md < 1440px';
+    } else if (width < 1600) {
+      this.screenType = 'lg < 1600px';
+    } else if (width < 1920) {
+      this.screenType = 'xl < 1920px';
     } else {
-      this.screenType = 'ultra (>= 1920px)';
+      this.screenType = 'ultra >= 1920px';
     }
   }
 }

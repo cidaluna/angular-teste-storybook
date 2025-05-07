@@ -1,28 +1,50 @@
-$container-dimensions: (
-  xz: (width: 300px, height: 280px),
-  xxs: (width: 320px, height: 300px),
-  xs: (width: 340px, height: 320px),
-  sm: (width: 380px, height: 350px),
-  md: (width: 400px, height: 400px),
-  ml: (width: 420px, height: 450px),
-  lg: (width: 440px, height: 500px),
-  xl: (width: 480px, height: 550px),
-  xxl: (width: 500px, height: 600px),
-  ultra: (width: 520px, height: 650px)
+@use "./breakpoints" as *;
+
+$layout-dimensions: (
+  xs: (width: 320px, height: 320px),
+  sm: (width: 380px, height: 400px),
+  md: (width: 420px, height: 420px),
+  lg: (width: 480px, height: 500px),
+  xl: (width: 520px, height: 520px),
+  ultra: (width: 580px, height: 600px)
 );
 
 @mixin center-container($value) {
-  $settings: map-get($container-dimensions, $value);
+  $settings: map-get($layout-dimensions, $value);
 
   @if $settings != null {
     $width: map-get($settings, width);
     $height: map-get($settings, height);
 
-    margin: 0 auto;
-    background-color: gray;
+    background-color: #a8a8a8;
     width: $width;
     height: $height;
+    /* @debug "Aplicando breakpoint: #{$value} → width: #{$width}, height: #{$height}"; */
   } @else {
     @warn "Breakpoint `#{$value}` não encontrado em \$container-dimensions.";
+  }
+}
+
+@mixin heading-style {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+@mixin paragraph-style {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 15px;
+
+  @include respond-to(sm) { // específico
+    font-size: 2.2rem;
+  }
+
+  @include respond-to(md) {
+    font-size: 1.4rem;
   }
 }
