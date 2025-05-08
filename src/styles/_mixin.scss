@@ -48,3 +48,9 @@ $layout-dimensions: (
     font-size: 1.4rem;
   }
 }
+
+@mixin highlight-link {
+  color: #cf0095;
+  text-decoration: underline;
+  font-weight: bold;
+}

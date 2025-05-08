@@ -29,4 +29,14 @@
   &__p {
     @include paragraph-style;
   }
+
+  &__link {
+    @include highlight-link;
+  }
+
+  &__link:hover {
+    color: #16005f;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
